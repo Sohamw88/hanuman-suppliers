@@ -1,0 +1,139 @@
+.projects {
+  padding: 100px 0;
+  background: var(--off-white);
+}
+
+.projects__header {
+  margin-bottom: 56px;
+}
+
+/* ===== PROJECT ROWS ===== */
+.projects__list {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid rgba(0,0,0,0.1);
+}
+
+.project-row {
+  display: grid;
+  grid-template-columns: 48px 1fr 1fr auto;
+  gap: 24px;
+  align-items: center;
+  padding: 24px 0;
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+  transition: background 0.2s;
+  border-radius: 4px;
+}
+
+.project-row:hover {
+  background: rgba(200, 151, 62, 0.06);
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+.project-row__num {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: rgba(0,0,0,0.15);
+}
+
+.project-row__info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.project-row__type {
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--type-color, #c8973e);
+}
+
+.project-row__name {
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--charcoal);
+}
+
+.project-row__meta {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.project-row__location {
+  font-size: 0.82rem;
+  color: var(--cement);
+}
+
+.project-row__materials {
+  font-size: 0.78rem;
+  color: var(--sandstone);
+  font-weight: 500;
+}
+
+.project-row__right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+}
+
+.project-row__size {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--charcoal);
+}
+
+.project-row__year {
+  font-size: 0.75rem;
+  color: var(--cement);
+}
+
+.projects__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 40px;
+  padding-top: 32px;
+  border-top: 1px solid rgba(0,0,0,0.08);
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.projects__footer p {
+  font-size: 0.95rem;
+  color: var(--cement);
+  font-style: italic;
+}
+
+.projects__cta {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--sandstone);
+  letter-spacing: 0.02em;
+  transition: color 0.2s, letter-spacing 0.2s;
+}
+
+.projects__cta:hover {
+  color: var(--brick-red);
+  letter-spacing: 0.06em;
+}
+
+@media (max-width: 768px) {
+  .project-row {
+    grid-template-columns: 36px 1fr;
+    grid-template-rows: auto auto;
+  }
+  .project-row__meta,
+  .project-row__right {
+    grid-column: 2;
+  }
+  .projects {
+    padding: 64px 0;
+  }
+}

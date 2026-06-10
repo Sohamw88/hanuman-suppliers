@@ -1,0 +1,319 @@
+.hero {
+  position: relative;
+  min-height: 100vh;
+  background: var(--charcoal);
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  padding: 120px 0 80px;
+}
+
+/* ===== MONUMENTAL BACKGROUND WORD — THE SIGNATURE ===== */
+.hero__bg-word {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(120px, 22vw, 280px);
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(200, 151, 62, 0.12);
+  white-space: nowrap;
+  pointer-events: none;
+  user-select: none;
+  z-index: 0;
+  will-change: transform;
+}
+
+/* ===== GEOMETRIC ACCENT LINES ===== */
+.hero__lines {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.hero__line {
+  position: absolute;
+  background: linear-gradient(to bottom, transparent, rgba(200, 151, 62, 0.25), transparent);
+  width: 1px;
+}
+
+.hero__line--1 {
+  left: 25%;
+  top: 0;
+  height: 100%;
+  opacity: 0.5;
+}
+
+.hero__line--2 {
+  right: 28%;
+  top: 0;
+  height: 100%;
+  opacity: 0.3;
+}
+
+/* ===== INNER LAYOUT ===== */
+.hero__inner {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  width: 100%;
+}
+
+.hero__content {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.hero__eyebrow {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--sandstone);
+  margin-bottom: 20px;
+  display: block;
+}
+
+.hero__heading {
+  font-size: clamp(2.4rem, 5vw, 4rem);
+  font-weight: 900;
+  color: #fff;
+  line-height: 1.1;
+  margin-bottom: 24px;
+}
+
+.hero__heading em {
+  font-style: italic;
+  color: var(--sandstone);
+}
+
+.hero__subtext {
+  font-size: 1.05rem;
+  color: rgba(255,255,255,0.6);
+  line-height: 1.8;
+  max-width: 480px;
+  margin-bottom: 36px;
+}
+
+.hero__actions {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 48px;
+}
+
+.hero__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 28px;
+  border-radius: 4px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.hero__btn--primary {
+  background: var(--sandstone);
+  color: var(--charcoal);
+}
+
+.hero__btn--primary:hover {
+  background: var(--sandstone-light);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(200, 151, 62, 0.35);
+}
+
+.hero__btn--outline {
+  border: 1.5px solid rgba(255,255,255,0.25);
+  color: rgba(255,255,255,0.85);
+  background: transparent;
+}
+
+.hero__btn--outline:hover {
+  border-color: var(--sandstone);
+  color: var(--sandstone);
+  transform: translateY(-2px);
+}
+
+/* ===== STATS ===== */
+.hero__stats {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.hero__stat {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.hero__stat-number {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.9rem;
+  font-weight: 700;
+  color: var(--sandstone);
+  line-height: 1;
+}
+
+.hero__stat-label {
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: rgba(255,255,255,0.45);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.hero__stat-divider {
+  width: 1px;
+  height: 40px;
+  background: rgba(255,255,255,0.12);
+}
+
+/* ===== BRICK VISUAL ===== */
+.hero__visual {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 28px;
+  position: relative;
+}
+
+.hero__brick-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  width: 100%;
+  max-width: 340px;
+}
+
+.hero__brick {
+  height: 52px;
+  border-radius: 4px;
+  animation: brickFadeIn 0.6s ease both;
+}
+
+.hero__brick:nth-child(odd) {
+  background: linear-gradient(135deg, #8b3a2a, #6b2a1a);
+}
+.hero__brick:nth-child(even) {
+  background: linear-gradient(135deg, #5a3a2a, #3a2a1a);
+}
+.hero__brick:nth-child(3n) {
+  background: linear-gradient(135deg, #c8973e, #a87028);
+  opacity: 0.7;
+}
+
+@keyframes brickFadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.hero__visual-badge {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(200, 151, 62, 0.3);
+  border-radius: 8px;
+  padding: 16px 24px;
+  text-align: center;
+  backdrop-filter: blur(8px);
+}
+
+.hero__badge-top {
+  display: block;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 4px;
+  font-family: 'Playfair Display', serif;
+}
+
+.hero__badge-num {
+  display: block;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--sandstone);
+  letter-spacing: 0.05em;
+  margin-bottom: 4px;
+}
+
+.hero__badge-tag {
+  display: block;
+  font-size: 0.7rem;
+  color: rgba(255,255,255,0.4);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+}
+
+/* ===== SCROLL HINT ===== */
+.hero__scroll-hint {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  color: rgba(255,255,255,0.35);
+  text-decoration: none;
+  z-index: 1;
+}
+
+.hero__scroll-line {
+  display: block;
+  width: 1px;
+  height: 40px;
+  background: linear-gradient(to bottom, transparent, rgba(200, 151, 62, 0.6));
+  animation: scrollPulse 2s ease-in-out infinite;
+}
+
+.hero__scroll-text {
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+@keyframes scrollPulse {
+  0%, 100% { opacity: 0.4; transform: scaleY(1); }
+  50% { opacity: 1; transform: scaleY(1.2); }
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 900px) {
+  .hero__inner {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .hero__visual {
+    display: none;
+  }
+  .hero__bg-word {
+    font-size: 26vw;
+    opacity: 0.6;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero__stats {
+    gap: 16px;
+  }
+  .hero__stat-number {
+    font-size: 1.5rem;
+  }
+  .hero__actions {
+    flex-direction: column;
+  }
+  .hero__btn {
+    justify-content: center;
+  }
+}

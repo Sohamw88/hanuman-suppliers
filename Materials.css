@@ -1,0 +1,140 @@
+.materials {
+  padding: 100px 0;
+  background: var(--section-bg);
+}
+
+.materials__header {
+  margin-bottom: 60px;
+}
+
+.materials__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+/* ===== MATERIAL CARD ===== */
+.mat-card {
+  background: #fff;
+  border-radius: 8px;
+  padding: 28px;
+  border: 1px solid rgba(0,0,0,0.06);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.mat-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--accent, #c8973e);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.mat-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(0,0,0,0.1);
+}
+
+.mat-card:hover::before {
+  transform: scaleX(1);
+}
+
+.mat-card__top {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.mat-card__icon {
+  font-size: 2rem;
+  width: 52px;
+  height: 52px;
+  background: var(--section-bg);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.mat-card__name {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--charcoal);
+  margin-bottom: 2px;
+}
+
+.mat-card__grade {
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--accent, #c8973e);
+}
+
+.mat-card__desc {
+  font-size: 0.9rem;
+  color: #666;
+  line-height: 1.7;
+}
+
+.mat-card__specs {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1;
+}
+
+.mat-card__specs li {
+  font-size: 0.82rem;
+  color: var(--cement);
+  display: flex;
+  gap: 8px;
+}
+
+.mat-card__bullet {
+  color: var(--sandstone);
+  flex-shrink: 0;
+}
+
+.mat-card__cta {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--sandstone);
+  letter-spacing: 0.02em;
+  margin-top: 4px;
+  transition: color 0.2s, letter-spacing 0.2s;
+  display: inline-block;
+}
+
+.mat-card__cta:hover {
+  color: var(--brick-red);
+  letter-spacing: 0.06em;
+}
+
+@media (max-width: 1000px) {
+  .materials__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 580px) {
+  .materials__grid {
+    grid-template-columns: 1fr;
+  }
+  .materials {
+    padding: 64px 0;
+  }
+}

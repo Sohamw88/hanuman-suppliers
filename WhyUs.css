@@ -1,0 +1,138 @@
+.whyus {
+  padding: 100px 0;
+  background: var(--charcoal);
+}
+
+.whyus .section-label {
+  color: var(--sandstone);
+}
+
+.whyus__title {
+  color: #fff;
+}
+
+.whyus .section-desc {
+  color: rgba(255,255,255,0.55);
+  margin-bottom: 36px;
+}
+
+.whyus__layout {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 80px;
+  align-items: start;
+}
+
+.whyus__left {
+  position: sticky;
+  top: 100px;
+}
+
+.whyus__highlight {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.whyus__highlight-line {
+  width: 3px;
+  background: linear-gradient(to bottom, var(--sandstone), var(--brick-red));
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+.whyus__quote {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 1rem;
+  color: rgba(255,255,255,0.75);
+  line-height: 1.7;
+}
+
+.whyus__quote-attr {
+  display: block;
+  font-size: 0.78rem;
+  color: var(--sandstone);
+  margin-top: 10px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+}
+
+.whyus__call-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--sandstone);
+  color: var(--charcoal);
+  font-size: 0.95rem;
+  font-weight: 700;
+  padding: 14px 28px;
+  border-radius: 4px;
+  letter-spacing: 0.03em;
+  transition: background 0.2s, transform 0.15s;
+}
+
+.whyus__call-btn:hover {
+  background: var(--sandstone-light);
+  transform: translateY(-2px);
+}
+
+/* ===== REASON CARDS ===== */
+.whyus__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.reason-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 8px;
+  padding: 24px;
+  transition: background 0.25s, border-color 0.25s;
+}
+
+.reason-card:hover {
+  background: rgba(200, 151, 62, 0.08);
+  border-color: rgba(200, 151, 62, 0.3);
+}
+
+.reason-card__icon {
+  font-size: 1.6rem;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.reason-card__title {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 8px;
+  letter-spacing: 0.01em;
+}
+
+.reason-card__desc {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.5);
+  line-height: 1.7;
+}
+
+@media (max-width: 900px) {
+  .whyus__layout {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+  .whyus__left {
+    position: static;
+  }
+}
+
+@media (max-width: 540px) {
+  .whyus__grid {
+    grid-template-columns: 1fr;
+  }
+  .whyus {
+    padding: 64px 0;
+  }
+}
