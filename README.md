@@ -1,5 +1,3 @@
-# Hanuman Construction Material Suppliers
-### Website by Soham S Wagh | 8530729356
 
 A professional React frontend for Hanuman Construction Material Suppliers, Sangamner, Maharashtra.
 
